@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="calculator_padding_seek_label">12dp</dimen>
+    <dimen name="calculator_result_margin">12dp</dimen>
+</resources>
