@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
+        android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_gravity="center"
         android:background="@drawable/image" />
@@ -15,40 +15,45 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:elevation="1dp"
         android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/radioButtonAdd"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:clickable="false"
             android:onClick="onRadioButtonClicked"
+            android:padding="@dimen/calculator_padding_seek_label"
             android:text="@string/add" />
 
         <RadioButton
             android:id="@+id/radioButtonSub"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
+            android:padding="@dimen/calculator_padding_seek_label"
             android:text="@string/subtract" />
 
         <RadioButton
             android:id="@+id/radioButtonMult"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
+            android:padding="@dimen/calculator_padding_seek_label"
             android:text="@string/multiply" />
 
         <RadioButton
             android:id="@+id/radioButtonDiv"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="onRadioButtonClicked"
+            android:padding="@dimen/calculator_padding_seek_label"
             android:text="@string/divide" />
     </RadioGroup>
 
@@ -56,7 +61,7 @@
         android:id="@+id/value1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/calculator_padding_seek_label"
+        android:padding="@dimen/calculator_padding_seek_label"
         android:text="New Text" />
 
     <SeekBar
@@ -68,7 +73,7 @@
         android:id="@+id/value2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/calculator_padding_seek_label"
+        android:padding="@dimen/calculator_padding_seek_label"
         android:text="New Text" />
 
     <SeekBar
