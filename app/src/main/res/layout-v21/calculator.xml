@@ -1,103 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:background="@drawable/image" />
-
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:elevation="1dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioButtonAdd"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:onClick="onRadioButtonClicked"
-            android:padding="@dimen/calculator_padding_seek_label"
-            android:text="@string/add" />
-
-        <RadioButton
-            android:id="@+id/radioButtonSub"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onRadioButtonClicked"
-            android:padding="@dimen/calculator_padding_seek_label"
-            android:text="@string/subtract" />
-
-        <RadioButton
-            android:id="@+id/radioButtonMult"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onRadioButtonClicked"
-            android:padding="@dimen/calculator_padding_seek_label"
-            android:text="@string/multiply" />
-
-        <RadioButton
-            android:id="@+id/radioButtonDiv"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onRadioButtonClicked"
-            android:padding="@dimen/calculator_padding_seek_label"
-            android:text="@string/divide" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/value1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/calculator_padding_seek_label"
-        android:text="New Text" />
-
-    <SeekBar
-        android:id="@+id/seekBar1"
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
-
-    <TextView
-        android:id="@+id/value2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/calculator_padding_seek_label"
-        android:text="New Text" />
-
-    <SeekBar
-        android:id="@+id/seekBar2"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:max="100" />
-
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <TextView
-            android:id="@+id/textViewResult"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/image" />
+
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/calculator_result_margin"
-            android:elevation="2dp"
-            android:lines="1"
-            android:text="New Text"
-            android:textAppearance="@android:style/TextAppearance.Material.Large" />
+            android:layout_marginTop="30dp"
+            android:elevation="1dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButtonAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:onClick="onRadioButtonClicked"
+                android:padding="@dimen/calculator_padding_seek_label"
+                android:text="@string/add" />
+
+            <RadioButton
+                android:id="@+id/radioButtonSub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked"
+                android:padding="@dimen/calculator_padding_seek_label"
+                android:text="@string/subtract" />
+
+            <RadioButton
+                android:id="@+id/radioButtonMult"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked"
+                android:padding="@dimen/calculator_padding_seek_label"
+                android:text="@string/multiply" />
+
+            <RadioButton
+                android:id="@+id/radioButtonDiv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onRadioButtonClicked"
+                android:padding="@dimen/calculator_padding_seek_label"
+                android:text="@string/divide" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/value1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/calculator_padding_seek_label"
+            android:text="New Text" />
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <TextView
+            android:id="@+id/value2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/calculator_padding_seek_label"
+            android:text="New Text" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:max="100" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/calculator_result_margin"
+                android:elevation="2dp"
+                android:lines="1"
+                android:padding="@dimen/calculator_padding_seek_label"
+                android:text="New Text"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        </LinearLayout>
+
+
     </LinearLayout>
-
-
-</LinearLayout>
+</ScrollView>
