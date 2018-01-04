@@ -34,12 +34,10 @@ public class CalculatorActivity extends AppCompatActivity {
     private MutableRepository<Integer> mValue2Repo = Repositories.mutableRepository(0);
     private Repository<Result<String>> mResultRepository;
 
-    private Updatable mValue1TVupdatable;
-    private Updatable mValue2TVupdatable;
+    private Updatable mValue1TVUpdatable;
+    private Updatable mValue2TVUpdatable;
     private Updatable mResultUpdatable;
     private MutableRepository<Result<Integer>> mOperationSelector = Repositories.mutableRepository(Result.absent());
-
-    private boolean mAnimationEnabled = true;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +51,7 @@ public class CalculatorActivity extends AppCompatActivity {
         }
         // For testing, the animation can be disabled via an Intent.
         if (getIntent().hasExtra(ANIMATIONS_ENABLED_KEY)) {
-            mAnimationEnabled = getIntent().getBooleanExtra(ANIMATIONS_ENABLED_KEY, true);
+            boolean mAnimationEnabled = getIntent().getBooleanExtra(ANIMATIONS_ENABLED_KEY, true);
         }
     }
 
@@ -84,10 +82,10 @@ public class CalculatorActivity extends AppCompatActivity {
         ((SeekBar) findViewById(R.id.seekBar2)).setOnSeekBarChangeListener(
                 new RepositorySeekBarListener(mValue2Repo));
 
-        mValue1TVupdatable = () -> ((TextView) findViewById(R.id.value1)).setText(
+        mValue1TVUpdatable = () -> ((TextView) findViewById(R.id.value1)).setText(
                 mValue1Repo.get().toString());
 
-        mValue2TVupdatable = () -> ((TextView) findViewById(R.id.value2)).setText(
+        mValue2TVUpdatable = () -> ((TextView) findViewById(R.id.value2)).setText(
                 mValue2Repo.get().toString());
 
         TextView resultTextView = findViewById(R.id.textViewResult);
@@ -124,12 +122,12 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void setUpdatables() {
-        mValue1Repo.addUpdatable(mValue1TVupdatable);
-        mValue2Repo.addUpdatable(mValue2TVupdatable);
+        mValue1Repo.addUpdatable(mValue1TVUpdatable);
+        mValue2Repo.addUpdatable(mValue2TVUpdatable);
         mResultRepository.addUpdatable(mResultUpdatable);
 
-        mValue1TVupdatable.update();
-        mValue2TVupdatable.update();
+        mValue1TVUpdatable.update();
+        mValue2TVUpdatable.update();
         mResultUpdatable.update();
     }
 
@@ -140,8 +138,8 @@ public class CalculatorActivity extends AppCompatActivity {
     }
 
     private void removeUpdatables() {
-        mValue1Repo.removeUpdatable(mValue1TVupdatable);
-        mValue2Repo.removeUpdatable(mValue2TVupdatable);
+        mValue1Repo.removeUpdatable(mValue1TVUpdatable);
+        mValue2Repo.removeUpdatable(mValue2TVUpdatable);
         mResultRepository.removeUpdatable(mResultUpdatable);
     }
 
