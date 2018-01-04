@@ -1,5 +1,6 @@
 package com.freeankit.ageracalculator;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +34,6 @@ public class CalculatorActivity extends AppCompatActivity {
     private MutableRepository<Integer> mValue2Repo = Repositories.mutableRepository(0);
     private Repository<Result<String>> mResultRepository;
 
-    private ExecutorService mExecutor;
     private Updatable mValue1TVupdatable;
     private Updatable mValue2TVupdatable;
     private Updatable mResultUpdatable;
@@ -57,11 +57,12 @@ public class CalculatorActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onStart() {
         super.onStart();
 
-        mExecutor = Executors.newSingleThreadExecutor();
+        ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
         mResultRepository = Repositories.repositoryWithInitialValue(Result.<String>absent())
                 .observe(mValue1Repo, mValue2Repo, mOperationSelector)
@@ -89,7 +90,7 @@ public class CalculatorActivity extends AppCompatActivity {
         mValue2TVupdatable = () -> ((TextView) findViewById(R.id.value2)).setText(
                 mValue2Repo.get().toString());
 
-        TextView resultTextView = (TextView) findViewById(R.id.textViewResult);
+        TextView resultTextView = findViewById(R.id.textViewResult);
         mResultUpdatable = () -> mResultRepository
                 .get()
                 .ifFailedSendTo(t -> Toast.makeText(this, t.getLocalizedMessage(),
