@@ -1,7 +1,7 @@
 # Agera-CalculatorExample
 An example of Calculator using Agera
 
-[!GIF](https://github.com/AnkitDroidGit/Agera-CalculatorExample/blob/master/art/screenshot.png)
+![GIF](https://github.com/AnkitDroidGit/Agera-CalculatorExample/blob/master/art/screenshot.png)
 
 ## let's connect to learn together
   - [Twitter](https://twitter.com/KumarAnkitRKE)
